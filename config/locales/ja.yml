@@ -198,7 +198,6 @@ ja:
       destroy: "削除する"
     edit:
       title: "編集画面"
-
     create:
       success: "本を作成しました。"
     update:
