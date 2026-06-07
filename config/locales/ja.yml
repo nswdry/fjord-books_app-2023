@@ -185,11 +185,11 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
   common:
-    back: "本一覧へ戻る"
+    back: "%{name}一覧へ戻る"
     show: "詳細画面へ"
   books:
     index:
-      title: "本一覧"
+      title: "%{name}一覧"
       new: "新規作成"
     new:
       title: "新規作成画面"
@@ -199,8 +199,8 @@ ja:
     edit:
       title: "編集画面"
     create:
-      success: "本を作成しました。"
+      success: "%{name}を作成しました。"
     update:
-      success: "本を更新しました。"
+      success: "%{name}を更新しました。"
     destroy:
-      success: "本を削除しました。"
+      success: "%{name}を削除しました。"

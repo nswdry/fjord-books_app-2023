@@ -32,22 +32,22 @@
 en:
   hello: "Hello world"
   common:
-    back: "Back to books"
-    show: "Show this book"
+    back: "Back to %{name}"
+    show: "Show this %{name}"
   books:
     index:
       title: "Books"
-      new: "New book"
+      new: "New %{name}"
     new:
-      title: "New book"
+      title: "New %{name}"
     show:
-      edit: "Edit this book"
-      destroy: "Destroy this book"
+      edit: "Edit this %{name}"
+      destroy: "Destroy this %{name}"
     edit:
-      title: "Editing book"
+      title: "Editing %{name}"
     create:
-      success: "Book was successfully created."
+      success: "%{name} was successfully created."
     update:
-      success: "Book was successfully updated."
+      success: "%{name} was successfully updated."
     destroy:
-      success: "Book was successfully destroyed."
+      success: "%{name} was successfully destroyed."
