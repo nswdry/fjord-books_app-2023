@@ -36,7 +36,7 @@ en:
     show: "Show this %{name}"
   books:
     index:
-      title: "Books"
+      title: "%{name}"
       new: "New %{name}"
     new:
       title: "New %{name}"

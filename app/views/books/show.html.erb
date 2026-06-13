@@ -5,8 +5,8 @@
 </div>
 
 <nav class="page-nav">
-  <%= link_to t('.edit', name: Book.model_name.human), edit_book_path(@book) %> |
-  <%= link_to t('common.back', name: Book.model_name.human), books_path %>
+  <%= link_to t('.edit', name: Book.model_name.human.downcase), edit_book_path(@book) %> |
+  <%= link_to t('common.back', name: pluralize_with_locale(Book.model_name.human).downcase), books_path %>
 
-  <%= button_to t('.destroy', name: Book.model_name.human), @book, method: :delete %>
+  <%= button_to t('.destroy', name: Book.model_name.human.downcase), @book, method: :delete %>
 </nav>

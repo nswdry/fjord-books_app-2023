@@ -1,18 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
-<h1><%= t('.title', name: Book.model_name.human) %></h1>
+<h1><%= t('.title', name: pluralize_with_locale(Book.model_name.human)) %></h1>
 
 <div id="books" class="index-items">
   <% @books.each do |book| %>
     <div class="index-item">
       <%= render book %>
       <p>
-        <%= link_to t('common.show', name: Book.model_name.human), book %>
+        <%= link_to t('common.show', name: Book.model_name.human.downcase), book %>
       </p>
     </div>
   <% end %>
 </div>
 
 <nav class="page-nav">
-  <%= link_to t('.new', name: Book.model_name.human), new_book_path %>
+  <%= link_to t('.new', name: Book.model_name.human.downcase), new_book_path %>
 </nav>
