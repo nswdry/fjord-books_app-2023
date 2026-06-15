@@ -187,7 +187,7 @@ ja:
   common:
     back: "%{name}一覧へ戻る"
     show: "詳細画面へ"
-  books:
+  defaults:
     index:
       title: "%{name}一覧"
       new: "新規作成"
