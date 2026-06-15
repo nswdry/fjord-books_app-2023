@@ -31,3 +31,28 @@
 
 en:
   hello: "Hello world"
+  common:
+    back: "Back to %{name}"
+    show: "Show this %{name}"
+  errors:
+    template:
+      header:
+        one: "%{count} error prohibited this %{model} from being saved:"
+        other: "%{count} errors prohibited this %{model} from being saved:"
+  defaults:
+    index:
+      title: "%{name}"
+      new: "New %{name}"
+    new:
+      title: "New %{name}"
+    show:
+      edit: "Edit this %{name}"
+      destroy: "Destroy this %{name}"
+    edit:
+      title: "Editing %{name}"
+    create:
+      success: "%{name} was successfully created."
+    update:
+      success: "%{name} was successfully updated."
+    destroy:
+      success: "%{name} was successfully destroyed."
