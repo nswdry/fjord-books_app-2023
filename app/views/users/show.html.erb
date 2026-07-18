@@ -6,7 +6,7 @@
 
 <nav class="page-nav">
   <% if current_user == @user %>
-    <%= link_to 'プロフィール編集', edit_user_registration_path %> |
+    <%= link_to t("views.common.edit", name: User.model_name.human), edit_user_registration_path %> |
   <% end %>
-  <%= link_to '一覧に戻る', users_path %>
+  <%= link_to t("views.common.back", name: User.model_name.human), users_path %>
 </nav>
