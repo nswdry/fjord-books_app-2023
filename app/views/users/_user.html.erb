@@ -2,7 +2,7 @@
 
   <% if user.avatar.attached? %>
     <p>
-      <%= image_tag user.avatar, size: "100x100" %>
+      <%= image_tag user.avatar.variant(:thumb) %>
     </p>
   <% end %>
 
