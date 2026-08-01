@@ -18,6 +18,10 @@
                     method: :delete %>
     <% end %>
 
+    <% if notice.present? %>
+      <p style="color: green"><%= notice %></p>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
