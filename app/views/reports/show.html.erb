@@ -10,3 +10,5 @@
     <%= button_to "Destroy this report", @report, method: :delete %>
   <% end %>
 </div>
+
+<%= render "comments/comments", commentable: @report %>

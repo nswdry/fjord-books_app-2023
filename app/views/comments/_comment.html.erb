@@ -1,0 +1,15 @@
+<div id="<%= dom_id comment %>">
+  <p>
+    <strong>Body:</strong>
+    <%= comment.body %>
+  </p>
+
+  <small style="color: gray;">
+    <%= comment.user.name.presence || comment.user.email %>
+    <%= l comment.created_at, format: :short %>
+  </small>
+
+  <% if comment.user == current_user %>
+    <%= button_to "Destroy this comment", @comment, method: :delete %>
+  <% end %>
+</div>
