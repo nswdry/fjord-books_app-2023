@@ -9,16 +9,16 @@ class CommentsController < ApplicationController
 
     if @comment.save
       redirect_to @commentable,
-                  notice: 'Comment was successfully created.'
+                  notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
       redirect_to @commentable,
-                  alert: 'Comment could not be created.'
+                  alert: t('views.common.validation_error', name: Comment.model_name.human, errors: @comment.errors.full_messages.join('、'))
     end
   end
 
   def destroy
     @comment.destroy
-    redirect_to @comment.commentable, notice: 'Comment was successfully destroyed.'
+    redirect_to @comment.commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
 
   private

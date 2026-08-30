@@ -1,6 +1,5 @@
 <div id="<%= dom_id comment %>">
   <p>
-    <strong>Body:</strong>
     <%= comment.body %>
   </p>
 
@@ -10,6 +9,6 @@
   </small>
 
   <% if comment.user == current_user %>
-    <%= button_to "Destroy this comment", @comment, method: :delete %>
+    <%= button_to t("views.common.destroy", name: Comment.model_name.human), [comment.commentable, comment], method: :delete %>
   <% end %>
 </div>
