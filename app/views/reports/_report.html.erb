@@ -6,6 +6,7 @@
 
   <p>
     <strong><%= Report.human_attribute_name(:body) %>:</strong>
-    <%= report.body %>
+    <%= report.body %><br>
+    <small style="color: gray;"><%= l report.created_at, format: :short %></small>
   </p>
 </div>
