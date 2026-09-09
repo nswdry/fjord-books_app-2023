@@ -4,7 +4,7 @@
   </p>
 
   <div id="<%= dom_id commentable %>_comments">
-    <%= render commentable.comments %>
+    <%= render commentable.comments.order(:created_at, :id) %>
   </div>
 
   <%= form_with model: [commentable, Comment.new] do |f| %>
