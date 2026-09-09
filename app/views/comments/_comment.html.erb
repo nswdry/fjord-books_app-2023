@@ -3,7 +3,7 @@
     <%= comment.body %>
   </p>
 
-  <small style="color: gray;">
+  <small class="author-name">
     <%= display_name_or_email(comment.user) %>
     <%= l comment.created_at, format: :short %>
   </small>
