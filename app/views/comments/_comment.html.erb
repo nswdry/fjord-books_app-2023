@@ -4,7 +4,7 @@
   </p>
 
   <small style="color: gray;">
-    <%= comment.user.name.presence || comment.user.email %>
+    <%= display_name_or_email(comment.user) %>
     <%= l comment.created_at, format: :short %>
   </small>
 
