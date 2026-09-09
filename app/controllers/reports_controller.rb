@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class ReportsController < ApplicationController
-  before_action :set_report, only: %i[show edit update destroy]
-  before_action :validate_user, only: %i[edit update destroy]
+  before_action :set_report, only: %i[edit update destroy]
 
   # GET /reports or /reports.json
   def index
@@ -10,7 +9,9 @@ class ReportsController < ApplicationController
   end
 
   # GET /reports/1 or /reports/1.json
-  def show; end
+  def show
+    @report = Report.includes(comments: :user).find(params[:id])
+  end
 
   # GET /reports/new
   def new
@@ -50,17 +51,11 @@ class ReportsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_report
-    @report = Report.includes(comments: :user).find(params[:id])
+    @report = current_user.reports.includes(comments: :user).find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
   def report_params
     params.require(:report).permit(:title, :body)
-  end
-
-  def validate_user
-    return unless @report.user != current_user
-
-    redirect_to reports_path, alert: t('views.common.validation_error_user')
   end
 end
