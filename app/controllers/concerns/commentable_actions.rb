@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
-class CommentsController < ApplicationController
-  before_action :set_commentable, only: :create
-  before_action :set_comment, only: :destroy
+module CommentableActions
+  extend ActiveSupport::Concern
+
+  included do
+    before_action :set_commentable, only: :create
+    before_action :set_comment, only: :destroy
+  end
+
   def create
     @comment = @commentable.comments.build(comment_params)
     @comment.user = current_user
@@ -22,15 +27,6 @@ class CommentsController < ApplicationController
   end
 
   private
-
-  def set_commentable
-    @commentable =
-      if params[:report_id]
-        Report.find(params[:report_id])
-      else
-        Book.find(params[:book_id])
-      end
-  end
 
   def set_comment
     @comment = current_user.comments.find(params[:id])
