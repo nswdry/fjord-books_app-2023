@@ -1,0 +1,20 @@
+<div id="comments">
+  <p>
+    <strong><%= t("views.common.title_index", name: Comment.model_name.human) %></strong>
+  </p>
+
+  <div id="<%= dom_id commentable %>_comments">
+    <%= render commentable.comments.order(:created_at, :id) %>
+  </div>
+
+  <%= form_with model: [commentable, Comment.new] do |f| %>
+    <p>
+      <%= f.label :body %><br>
+      <%= f.text_area :body, required: true %>
+    </p>
+
+    <p>
+      <%= f.submit t("views.common.new", name: Comment.model_name.human) %>
+    </p>
+  <% end %>
+</div>
