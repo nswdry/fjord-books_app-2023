@@ -31,9 +31,7 @@ class Report < ApplicationRecord
     content_ids = extract_mentioned_report_ids
     saved_ids = mentioning_relations.pluck(:mentioned_report_id)
 
-    (saved_ids - content_ids).each do |mentioned_id|
-      mentioning_relations.find_by(mentioned_report_id: mentioned_id).destroy
-    end
+    mentioning_relations.where(mentioned_report_id: saved_ids - content_ids).destroy_all
 
     (content_ids - saved_ids).each do |mentioned_id|
       mentioning_relations.create!(mentioned_report_id: mentioned_id)
