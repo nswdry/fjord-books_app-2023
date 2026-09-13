@@ -29,7 +29,7 @@ class Report < ApplicationRecord
 
   def sync_report_mentions
     content_ids = extract_mentioned_report_ids
-    saved_ids = mentioning_relations.pluck(:mentioned_report_id)
+    saved_ids = mentioning_report_ids
 
     mentioning_relations.where(mentioned_report_id: saved_ids - content_ids).destroy_all
 
