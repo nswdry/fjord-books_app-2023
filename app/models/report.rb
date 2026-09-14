@@ -10,7 +10,7 @@ class Report < ApplicationRecord
 
   has_many :mentioned_relations, class_name: 'ReportMention',
                                  foreign_key: :mentioned_report_id, dependent: :destroy, inverse_of: :mentioned_report
-  has_many :mentioned_reports, -> { order(:created_at, :id) }, through: :mentioned_relations, source: :mentioning_report
+  has_many :mentioned_reports, through: :mentioned_relations, source: :mentioning_report
 
   validates :title, presence: true
   validates :content, presence: true
