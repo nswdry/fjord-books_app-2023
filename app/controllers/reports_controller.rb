@@ -8,7 +8,7 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @report = Report.includes(comments: :user).find(params[:id])
+    @report = Report.includes(:user).find(params[:id])
   end
 
   def new
