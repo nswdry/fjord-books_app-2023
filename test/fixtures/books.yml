@@ -1,9 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  memo: MyText
-
-two:
-  title: MyString
-  memo: MyText
+  title: Ruby超入門
+  memo: Rubyの文法の基本を解説しています。
+  author: 五十嵐 邦明
