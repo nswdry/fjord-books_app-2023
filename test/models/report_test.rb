@@ -52,4 +52,17 @@ class ReportTest < ActiveSupport::TestCase
     assert_includes report.mentioning_reports, target2
     assert_not_includes report.mentioning_reports, target1
   end
+
+  test '#save_mentions 日報を削除するとmentioning_reportsも削除される' do
+    target = reports(:two)
+    report = reports(:one)
+
+    report.update!(content: "http://localhost:3000/reports/#{target.id}")
+    assert_includes report.mentioning_reports, target
+
+    report.destroy!
+
+    assert_empty ReportMention.where(mentioning_id: report.id)
+    assert_empty ReportMention.where(mentioned_id: report.id)
+  end
 end
