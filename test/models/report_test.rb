@@ -18,7 +18,9 @@ class ReportTest < ActiveSupport::TestCase
   test '#created_on 日付を返す' do
     report = reports(:one)
 
-    assert_equal report.created_at.to_date, report.created_on
+    report.update!(created_at: Time.zone.parse('2026-09-26 06:48:58'))
+
+    assert_equal Date.new(2026, 9, 26), report.created_on
   end
 
   test '#save_mentions 本文に他のreportのURLがあればmentioning_reportsに追加' do
